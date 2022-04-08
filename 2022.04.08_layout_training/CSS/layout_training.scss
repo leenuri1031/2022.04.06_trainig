@@ -17,6 +17,12 @@
     border: $solid-black;
   }  
 
+  @mixin size($w, $h) {
+    width: $w;
+    height: $h;
+  }
+  
+
 // --------------------------------------------
 
 *{margin: 0; padding: 0;}
