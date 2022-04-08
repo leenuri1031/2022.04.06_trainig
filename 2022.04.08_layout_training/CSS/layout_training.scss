@@ -1,0 +1,93 @@
+
+// var --------------------------------------------
+  $width-root:100vw;
+  $height-root:100vh;
+  $color-black:black;
+  $color-white:white;
+  $solid-black:1px solid black;
+  $solid-gray:1px solid #888;
+  $solid-red:1px solid #613c3c;
+  $width-per:45%;
+  $height-per:90%;
+  $color-1:#e0dede;
+  $color-2:#d3d1d1;
+  $color-3:#c4c4c4;
+  $color-4:#9c9c9c;
+  $color-5:#8b8b8b;
+  $color-6:#8f4b4b;
+
+
+
+  @mixin flex-c-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @mixin root-style {
+    width: $width-root;
+    height: $height-root;
+    background-color: $color-1;
+    border: $solid-black;
+  }  
+
+// --------------------------------------------
+
+*{margin: 0; padding: 0;}
+
+
+#root{
+  @include root-style;
+
+  @include flex-c-c;
+
+  &>div{
+    width:$width-per;
+    height:$height-per;
+    border:$solid-black;
+    background-color: $color-2;
+  }
+
+  &>div:nth-child(2){
+
+    @include flex-c-c;
+    flex-direction: column;
+    
+    &>div{
+      width: $height-per;
+      height: $width-per;
+      border: $solid-black;
+      background-color: $color-3;
+      @include flex-c-c;
+    }
+
+    &>div:nth-child(2){
+      @include flex-c-c;
+
+      &>div{
+        width: $width-per;
+        height: $height-per;
+        border: $solid-black;
+        background-color: $color-4;
+        @include flex-c-c;
+
+        &>div{
+          width: 40%;
+          height: 50%;
+          border: $solid-black;
+          background-color: $color-5;
+        }
+
+        &>div:nth-child(1){
+          @include flex-c-c;
+
+          &>div{
+            width: 4vw;
+            height: 4vw;
+            background-color: $color-6;
+          }
+        }
+      }
+    }
+  }
+}
