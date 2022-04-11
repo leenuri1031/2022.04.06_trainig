@@ -1,0 +1,200 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$width-per:45%;
+$height-per:90%;
+$color-1:#e0dede;
+$color-2:#d3d1d1;
+$color-3:#c4c4c4;
+$color-4:#9c9c9c;
+$color-5:#8b8b8b;
+$color-6:#8f4b4b;
+
+// ------------------------------------
+
+.flex{display: flex;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+
+@mixin flex-s-c{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-e-e{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+@mixin flex-a-c{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex-a-s{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+@mixin flex-b-c{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-b-s{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin flex-b-e{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@mixin flex-e-c{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex-e-s{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@mixin flex-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h) {
+  width: $w;
+  height: $h;
+  background-color: $color-3;
+  border-radius: 20px;
+}
+
+// ------------------------------------------
+
+*{margin: 0; padding: 0;}
+
+
+#root{
+  @include root-style;
+}
+
+header{
+  @include size($w:90%, $h:20% );
+  @include flex-b-c;
+
+  &>div{
+    @include size($w:85%, $h:45% );
+  }
+
+  &>div:nth-child(1){
+
+    &>div{
+      @include size($w:50px, $h:100% );
+      @include flex-s-e;
+      color: $color-3;
+      font-size: 40px;
+    }
+  }
+
+  &>div:nth-child(2){
+    color: $color-3;
+  }
+
+
+}
+
+main{
+  @include size($w:90%, $h:70% );
+  @include flex-a-c;
+
+  &>div:nth-child(1){
+    @include size($w:90%, $h:10% );
+    @include flex-e-e;
+
+    &>ul{
+      @include size($w:15%, $h:100% );
+      color: $color-3;
+      @include flex-a-c;
+
+      &>li:nth-child(1){
+        color: $color-5;
+      }
+    }
+  }
+
+  &>div:nth-child(2){
+    @include box-style($w:90%, $h:30% );
+    @include flex-a-c;
+
+    &>section:nth-child(1){
+      @include size($w:90%, $h:30% );
+      @include flex-c-c;
+
+      &>P{
+        @include size($w:80%, $h:10% );
+        color: $color-1;
+        font-size: 11PX;
+        @include flex-e-s;
+      }
+
+      &>div{
+        @include size($w:90%, $h:80% );
+        color: $color-5;
+        font: {
+          family:'Roboto';
+          size: 50px;
+          weight: 900;
+        }
+      }
+    }
+
+    &>section:nth-child(2){
+      @include size($w:90%, $h:50% );
+
+    }
+  }
+
+  &>div:nth-child(3){
+    @include box-style($w:90%, $h:45% )
+  }
+
+}
