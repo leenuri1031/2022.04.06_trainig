@@ -1,0 +1,47 @@
+*{
+  margin: 0; 
+  padding: 0;
+}
+
+
+
+@mixin flex-setting($justi, $ali) {
+  display: flex;
+  justify-content: $justi;
+  align-items: $ali;
+}
+
+// -----------------------------------
+
+#root{
+  width: 100vw;
+  height: 100vh;
+  background-color: #c4c4c4;
+
+  @include flex-setting(center, center);
+
+
+
+  &>div{
+    width: 50vw;
+    height: 50vh;
+    background-color: #aaa;
+    @include flex-setting(flex-start, center);
+
+
+    &>section{
+      width: 100px;
+      height: 100px;
+      background-color: thistle;
+      border: 1px solid black;
+    }
+
+    &>section:nth-child(2){
+      width: 200px;
+      height: 100px;
+      background-color: aliceblue;
+    }
+
+  }
+}
+
