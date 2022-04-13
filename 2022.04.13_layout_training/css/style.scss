@@ -115,12 +115,13 @@ header{
 main{
   @include size(100%, 80%);
   @include flex-setting(center, center);
-  flex-wrap: wrap;
 
   &>section:first-child{
     @include box-style(80%, 80%, $color-2);
     @include flex-setting(center, center);
     @include position-setting(2);
+    left: 120px;
+
 
     &>div{
       @include size(90%, 30%);
@@ -182,10 +183,10 @@ main{
   }
 
   &>section:last-child{
-    @include box-style(60%, 80%, $color-3);
+    @include box-style(60%, 90%, $color-3);
     @include position-setting(1);
-    bottom: 650px;
-    left: 80px;
+    bottom: 50px;
+    right: 100px;
   }
 }
 

@@ -80,7 +80,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 main > section:first-child {
   width: 80%;
@@ -91,6 +90,7 @@ main > section:first-child {
   align-items: center;
   position: relative;
   z-index: 2;
+  left: 120px;
 }
 main > section:first-child > div {
   width: 90%;
@@ -151,10 +151,10 @@ main > section:first-child > div:nth-child(2) > div:nth-child(2) {
 }
 main > section:last-child {
   width: 60%;
-  height: 80%;
+  height: 90%;
   background-color: #5f87ac;
   position: relative;
   z-index: 1;
-  bottom: 650px;
-  left: 80px;
+  bottom: 50px;
+  right: 100px;
 }/*# sourceMappingURL=style.css.map */

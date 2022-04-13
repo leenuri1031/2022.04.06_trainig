@@ -100,6 +100,7 @@ $color-6:#202a33;
   
     &>section:first-child{
       @include box-style(40%, 80%, $color-2);
+      left: 0;
 
       &>div:nth-child(1){
 
@@ -135,9 +136,10 @@ $color-6:#202a33;
     }
   
     &>section:last-child{
-      margin-left: -55px;
       @include box-style(20%, 80%, $color-3);
       bottom: 0;
+      right: 0;
+      left: 10px;
     }
 
   }

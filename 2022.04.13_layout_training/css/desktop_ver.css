@@ -47,6 +47,7 @@
     width: 40%;
     height: 80%;
     background-color: #b6c6d6;
+    left: 0;
   }
   main > section:first-child > div:nth-child(1) > div:nth-child(1) {
     width: 20%;
@@ -74,10 +75,11 @@
     margin-right: 90px;
   }
   main > section:last-child {
-    margin-left: -55px;
     width: 20%;
     height: 80%;
     background-color: #5f87ac;
     bottom: 0;
+    right: 0;
+    left: 10px;
   }
 }/*# sourceMappingURL=desktop_ver.css.map */
