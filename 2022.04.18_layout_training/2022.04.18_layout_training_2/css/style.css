@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./cityscape-7095358.jpg);
+  background-size: cover;
+}
+main > nav {
+  width: 100%;
+  height: 5vh;
+  background-color: rgba(140, 139, 168, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: relative;
+  align-items: 2;
+}
+main > nav > div {
+  width: 5%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(219, 219, 219);
+  font-size: 20px;
+}
+main > nav > ul {
+  width: 30%;
+  height: 50%;
+  list-style-type: none;
+  color: rgba(52, 52, 63, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main > section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main > section > div:nth-child(1) {
+  width: 30%;
+  height: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-left: 5px solid rgb(255, 255, 255);
+}
+main > section > div:nth-child(1) > ul {
+  color: rgb(219, 219, 219);
+  font-size: 18px;
+  margin-left: 5%;
+}
+main > section > div:nth-child(2) {
+  width: 55%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+main > section > div:nth-child(2) > div:nth-child(1) {
+  width: 35%;
+  height: 80%;
+  background-color: rgba(54, 54, 54, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main > section > div:nth-child(2) > div:nth-child(1) > h2 {
+  width: 90%;
+  height: 10%;
+  color: rgb(219, 219, 219);
+}
+main > section > div:nth-child(2) > div:nth-child(1) > div {
+  width: 90%;
+  height: 60%;
+  color: rgb(219, 219, 219);
+  text-align: justify;
+}
+main > section > div:nth-child(2) > div:nth-child(2) {
+  width: 25%;
+  height: 80%;
+  background-color: rgba(54, 54, 54, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main > section > div:nth-child(2) > div:nth-child(2) > div {
+  width: 5px;
+  height: 5px;
+  background-color: rgb(219, 219, 219);
+  margin: 5px;
+}
+main > section > div:nth-child(2) > div:nth-child(3) {
+  width: 25%;
+  height: 80%;
+  background-color: rgba(54, 54, 54, 0.2);
+}
+
+footer {
+  width: 100%;
+  height: 25vh;
+  background-color: rgb(27, 25, 49);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer > div:first-child {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(219, 219, 219);
+}
+footer > div:first-child section:nth-child(1) {
+  width: 20vw;
+  height: 40vh;
+  background-image: url(./kids-6960579_1920.jpg);
+  background-size: cover;
+  position: relative;
+  z-index: 2;
+  right: 3%;
+  bottom: 55%;
+}
+footer > div:first-child section:nth-child(2) {
+  width: 55%;
+  height: 50%;
+}
+footer > div:last-child {
+  width: 60%;
+  height: 20%;
+  color: rgb(219, 219, 219);
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
