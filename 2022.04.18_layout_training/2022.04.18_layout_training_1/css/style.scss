@@ -1,0 +1,226 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:8px solid black;
+$solid-gray:8px solid rgb(88, 88, 88);
+$solid-red:1px solid #613c3c;
+$per-100:100%;
+$color-1:rgb(219, 219, 219);
+$color-2:rgb(192, 190, 190);
+$color-3:rgb(170, 170, 170);
+$color-4:rgb(121, 121, 121);
+$color-5:rgb(88, 88, 88);
+$color-6:rgb(54, 54, 54);
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}
+
+
+  @mixin size($w, $h) {
+    width: $w;
+    height: $h;
+  }
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($posi, $z-in){
+  position: $posi;
+  z-index: $z-in;
+}
+
+
+// ------------------------------------------------------------------
+
+#root{
+  @include root-style;
+}
+
+header{
+  @include box-style($per-100, 10vh, $color-2);
+  @include flex-setting(flex-start, center);
+
+  &>div{
+    @include box-style(10%, 80% , $color-4);
+    margin-left: 15px;
+  }
+}
+
+main{
+  @include box-style($per-100, 78vh , $color-3);
+
+  &>section:first-child{
+    @include box-style(inherit, 60% , $color-3);
+    @include flex-setting(center, center);
+    
+    &>div:nth-child(1){
+      @include size(35%, $per-100);
+
+
+
+      &>div:nth-child(1){
+        @include box-style(90%, 50%, $color-2);
+        @include position-setting(relative, 3);
+        top: 25%;
+        left: 4%;
+
+      }
+
+      &>div:nth-child(2){
+        @include box-style(90%, 50%, $color-5);
+        @include position-setting(relative, 2);
+        bottom: 20%;
+        left: 8%;
+
+      }
+
+      &>div:nth-child(3){
+        @include box-style(90%, 50%, $color-6);
+        @include position-setting(relative, 1);
+        bottom: 65%;
+        left: 12%;
+      }
+    }
+
+    &>div:nth-child(2){
+      @include box-style(55%, 60% ,$color-4 );
+      @include flex-setting(space-evenly, center);
+      @include position-setting(relative, 1);
+      left: 2%;
+      bottom: 40%;
+
+
+      &>div{
+        @include box-style(22%, 80%, $color-3 );
+
+        &>ul{
+          @include size($per-100, $per-100);
+          @include flex-setting(center, center);
+          flex-direction: column;
+          list-style-type: none;
+          line-height: 30px;
+        }
+      }
+    }
+
+  }
+
+  &>section:last-child{
+    @include box-style(inherit, 40% , $color-4);
+    @include flex-setting(space-around, center);
+
+
+    &>div{
+      @include box-style(32%, 80% , $color-2 );
+    }
+
+    &>div:nth-child(1){
+      @include flex-setting(center, center);
+
+      &>div:nth-child(1){
+        @include size(50%,70% );
+        @include position-setting(relative, 1);
+        left: 5%;
+        bottom: 10%;
+
+        &>div:nth-child(1){
+          @include box-style($per-100, 30% , $color-2 );
+          border:$solid-gray;
+        }
+
+        &>div:nth-child(2){
+          @include box-style($per-100, 70% , $color-2 );
+          border:
+            {
+            left:$solid-gray ;
+            right: $solid-gray;
+            bottom: $solid-gray;
+          }
+            ;
+          }
+      }
+
+      &>div:nth-child(2){
+        @include size(50%,70% );
+        @include position-setting(relative, 2);
+        right: 5%;
+
+        &>div:nth-child(1){
+          @include box-style($per-100, 30% , $color-2 );
+          border:$solid-black;
+        }
+
+        &>div:nth-child(2){
+          @include box-style($per-100, 70% , $color-2 );
+          border:
+          {
+            left:$solid-black ;
+            right: $solid-black;
+            bottom: $solid-black;
+          }
+          ;
+          }
+      }
+    }
+  }
+}
+
+footer{
+  @include box-style($per-100, 12vh , $color-5 );
+  @include flex-setting(space-evenly, center );
+
+  &>div:nth-child(1){
+    @include box-style(28%, 80%, $color-2 );
+  }
+
+  &>div:nth-child(2){
+    @include box-style(40%, 80%, $color-2 );
+  }
+
+  &>div:nth-child(3){
+    @include box-style(28%, 80%, $color-2 );
+  }
+}
+
+
+
+
+
+
+
+
+
+
