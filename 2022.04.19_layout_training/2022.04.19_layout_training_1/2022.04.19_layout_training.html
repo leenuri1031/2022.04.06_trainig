@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="root">
+    <div id="round">
+      <div></div>      <!-- bgc-circle -->
+      <div></div>      <!-- border-circle -->
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>  <!-- dots*3 -->
+    </div>
+    <div id="card-section">
+      <div id="card-one">
+        <h1>DON'T<br>DWELL<br>ON<br>THE<br>PAS</h1>
+      </div>
+      <div id="card-two">
+        <h1>SEIZE<br>THE<br>DAY</h1>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    console.log(root);
+    const cardOne = document.querySelector('#card-one');
+    cardOne.style.color = "rgb(194, 194, 194)" ;
+    // console.dir(cardOne);
+
+    const cardTow = document.querySelector('#card-two');
+    cardTow.style.color = "rgb(194, 194, 194)" ;
+    // console.dir(cardTow);
+
+    cardOne.addEventListener('click', function() {
+      cardOne.style.color = "rgb(201, 84, 129)" ;
+      cardTow.style.color = "rgb(201, 84, 129)" ;
+    });
+    
+  </script>
+  <!-- click event가 안먹히고 있음 -->
+</body>
+</html>
