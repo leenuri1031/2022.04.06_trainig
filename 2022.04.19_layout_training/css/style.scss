@@ -1,0 +1,169 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:8px solid black;
+$solid-gray:8px solid rgb(88, 88, 88);
+$solid-red:1px solid #613c3c;
+$solid-color:3px solid rgb(165, 192, 140);
+$per-100:100%;
+$color-1:rgba(194, 194, 194,1);
+$color-2:rgb(252, 255, 81);
+$color-3:rgb(201, 84, 129);
+$color-4:rgba(161, 161, 161, 0.2);
+$color-5:rgba(49, 49, 49, 0.2);
+$color-6:rgba(54, 54, 54, 1);
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin root-style {
+  width: $width-root;
+  // height: $height-root;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-6;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin mobile-style {
+  width: 430px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-6;
+}
+
+  @mixin size($w, $h) {
+    width: $w;
+    height: $h;
+  }
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($posi, $z-in){
+  position: $posi;
+  z-index: $z-in;
+}
+
+@mixin card {
+  width: 90vw;
+  height: 50vh;
+  background-color: $color-4;
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  margin-bottom: 2vh;
+}
+
+// ------------------------------------------------------------------
+
+#root{
+  @include root-style;}
+  
+
+#round{
+  @include size(inherit, 50vh);
+  position: relative;
+
+  &>div{
+    position: relative;
+  }
+
+  &>div:nth-child(1){
+    @include box-style(200px, 200px , $color-3);
+    border-radius: 50%;
+    z-index: 1;
+    left: 12vw;
+    top: 15vh;
+  }
+
+  &>div:nth-child(2){
+    @include size(300px,300px );
+    border-radius: 50%;
+    border: $solid-color;
+    z-index: 2;
+    left: 25vw;
+  }
+
+  &>div:nth-child(3){
+    @include size(80%, 10%);
+    @include flex-setting(space-around, center);
+    flex-direction: column;
+    left: -30vw;
+    bottom: 13vh;
+
+    &>div{
+      @include box-style(10px, 10px, $color-1);
+      border-radius: 50%;
+    }
+  }
+}
+
+#card-section{
+  @include flex-setting(center,center );
+  flex-direction: column;
+
+  &>div{
+    @include card;
+    @include position-setting(relative, 3);
+    bottom: 15vh;
+    @include flex-setting(center,flex-start );
+
+    &>h1{
+      width: 80vw;
+      height: 20vh;
+      color: $color-1;
+      font-weight: 900;
+      font-size: 4rem;
+      margin-top: 2vw;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
