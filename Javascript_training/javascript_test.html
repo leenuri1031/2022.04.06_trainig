@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <h1 id="q-text">Who are you?</h1>
+    <div id="a-text">I'm El Mundo</div>
+    <button id="click-button">click</button>
+  </div>
+
+  <script>
+
+    const root = document.getElementById('root');
+
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+
+    console.log(root);
+    console.dir(root);
+
+    root.style.display = "flex";
+    root.style.justifyContent = "flex-start";
+    root.style.alignItems = "center";
+    root.style.flexDirection = "column";
+
+    const qText = document.getElementById('q-text');
+
+    qText.style.width = "100vw";
+    qText.style.height = "5vh";
+    qText.style.display = "flex";
+    qText.style.justifyContent = "center";
+    qText.style.alignItems = "center";
+    qText.style.color = "rgb(140, 139, 168)";
+
+
+    console.dir(qText);
+
+
+    const aText = document.getElementById('a-text');
+    aText.style.display = "none";
+
+    console.dir(aText);
+
+    const clickButton = document.getElementById('click-button');
+    clickButton.style.marginTop = "2vh";
+
+    clickButton.addEventListener("click", function() {
+    aText.style.display = "block";
+    });
+
+    // event반복은 어떻게 하는지?
+
+    console.dir(clickButton);
+
+
+
+  </script>
+</body>
+</html>

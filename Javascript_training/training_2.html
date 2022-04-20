@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="box"></div>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+
+    let width = "100vw";
+
+    let height = "100vh";
+
+    root.style.width = "width";
+    root.style.height = "height";
+
+
+    const box = document.getElementById('box');
+    // 문서에서 'box'이라는 이름을 가진 id를 가져와 box 이라는 변수로 선언
+
+    console.dir(box);
+
+    let colorValue = "blue";
+
+    console.log(box.style);
+
+    box.style.width = "30vw";
+    box.style.height = "30vw";
+    box.style.backgroundColor = "blue";
+    
+    if(box.style.backgroundColor === "blue"){
+      box.style.borderRadius = "50%";
+    }
+
+    box.addEventListener("click", function(){
+      if (box.style.backgroundColor === "blue") {
+        box.style.backgroundColor = "red";
+      } else {
+        box.style.backgroundColor = "blue";
+      }
+    });
+    
+    // box.addEventListener("click", function(){
+    //   if (box.style.backgroundColor === "blue") {
+    //     box.style.backgroundColor = "red";
+    //   }
+    // });
+
+    // 클릭 이벤트를 반복 설정 하고 싶어 클릭 이벤트의 조건문을 두번 써 줬는데 작동하지 않아 if문과 else를 사용하여 반복 될 수 있게 함
+
+  </script>
+</body>
+</html>

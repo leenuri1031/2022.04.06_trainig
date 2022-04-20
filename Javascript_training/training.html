@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="title">hello</h1>
+
+  <script>
+    let a = document.getElementById('title');
+    // 문서에서 문자열'title'이라는 이름을 가진 id값을 가져와 'a'라는 변수를 지정 
+
+    console.log(a);
+    // 콘솔에서 a를 기록
+
+    console.dir(a);
+    // 콘솔에서 a의 구조 확인
+
+    console.log(a.style);
+    // 구조 중에 style이라는 키값을 기록
+
+    let colorValue = "red";
+    // 문자열 "red" 를  이름이 colorValue인 변수로 선언
+
+    a.style.color = colorValue;
+    if(a.style.color === "red") {
+      a.style.color = "rgba(158,158,158,03)";
+    }
+    // event를 넣을 수 있음
+
+  </script>
+
+</body>
+</html>
