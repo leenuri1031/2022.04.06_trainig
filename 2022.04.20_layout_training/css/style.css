@@ -57,7 +57,7 @@
   font-family: "Playfair Display", serif;
   font-weight: 900;
   text-align: end;
-  bottom: 5vh;
+  bottom: 7vh;
   left: 15vw;
 }
 #root > section:nth-child(1) > div:nth-child(3) {
@@ -68,7 +68,7 @@
   font-family: "Playfair Display", serif;
   font-weight: 900;
   text-align: start;
-  bottom: 37vh;
+  bottom: 44vh;
   left: 40vw;
   transform: rotate(270deg);
 }
@@ -77,8 +77,8 @@
   height: 6vh;
   position: absolute;
   z-index: 2;
-  left: 38vw;
-  top: 50vh;
+  left: 39vw;
+  top: 45vh;
   font-family: "Playfair Display", serif;
   font-weight: 900;
   font-size: 50px;
