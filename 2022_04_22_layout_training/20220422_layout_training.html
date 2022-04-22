@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="circle"></div>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+
+    let hundred = 100;
+
+    root.style.width = hundred + "vw";
+    root.style.height = hundred + "vh";
+
+    console.log(root);
+    console.dir(root);
+
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+
+    let thirty = 30 ;
+    let viewPortWith = "vw"; 
+
+    root.children[0].style.width = thirty + viewPortWith;
+    root.children[0].style.height = thirty + viewPortWith;
+    root.children[0].style.backgroundColor = "gray";
+    root.children[0].style.borderRadius = "50%";
+
+    let count = 35;
+
+    
+    root.children[0].addEventListener('click', function(){
+      
+      root.children[0].style.width = count + viewPortWith;
+      root.children[0].style.height = count + viewPortWith;
+      
+      count = count + 5;
+      if(count > hundred/2){
+        count = 30;
+      }
+    }
+    )
+    
+    // 원을 클릭 할 때마다 크기가 커지게 하고 싶음
+    // -> 한번 클릭 했을 때의 크기를 count에 대입 
+    // -> 다음 클릭 부터는 5씩 커지게 해줌
+    // -> 그러나 root의 크기보다 커지면 안되기 때문에 너무 커지게 하고 싶지 않아서 어느정도 커지게 되면 원래 크기로 돌아오게 함
+
+
+
+    // const circle = document.getElementById('circle');
+    // console.log(circle);
+
+
+    // circle.style.width = thirty + viewPortWith ;
+    // circle.style.height = thirty + viewPortWith ;
+    // circle.style.backgroundColor = "#c4c4c4";
+    // circle.style.borderRadius = "50%";
+
+
+    // 자식div에 직접 id를 지정하고 id를 가져와 스타일링 할 수 있고, scss처럼 root의 children키값을 이용해서 스타일링 할 수 도 있음(id지정해서 할때에는 단어 자동완성이 되는데 root의 children을 이용해서 스타일할 경우 자동완성이 안됨 = 스펠링 잘못 쓰면 에러날 가능성 있음)
+
+
+
+
+
+  </script>
+</body>
+</html>
