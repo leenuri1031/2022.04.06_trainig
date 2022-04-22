@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    console.dir(root);
+    console.log(root.children);
+    console.log(root.children[0]);
+    console.dir(root.children[0]);
+
+    // * 문자열 꾸러미를 한번에 변수에 저장하면 안돼나?
+
+    const textArray = ["안녕하세요! 오늘은 행복한 금요일 이네요!", "내일은 토요일이에요", "모레는 일요일이에요", "글피는 으아아아아아ㅏ아아", "화요일에는 화장품을 살거에요"];
+
+  document.body.style.width = "100vw";
+  document.body.style.height = "100vh";
+  document.body.style.backgroundColor = "darkcyan";
+
+    
+    // 알고리즘 구상 : 문서를 클릭할 때 마다 text가 바뀌었으면 좋겠음
+    // text목록이 필요
+    // 목록은 배열이 순서대로임
+    // 순서는 숫자니까 +1만 하면 ok
+    // 숫자는 어떻게 덧셈시켜야 하는지?
+    // 숫자 변수가 필요
+    // 
+
+    let indexValue = 0;
+
+    document.body.addEventListener("wheel", function(){
+      if(root.children[0].textContent === ""){
+        root.children[0].textContent = textArray[indexValue];
+      } else {
+        indexValue++;
+        // 숫자 1을 증가시켜준 다음 다시 재할당
+        root.children[0].textContent = textArray[indexValue];
+      }      
+      if(indexValue === textArray.length){
+        indexValue = 0;
+      }
+    });
+    
+    // root.children[0].textContent = textArray[1];
+
+    // 문서의 body를 클릭 하면 두번째 인수로 자리잡혀 있는 함수 내용을 실행 시킴
+    // 함수내용 = 알고리즘
+    // root에 있는 자식에 0번째가 있는데 그것도 태그일것이고 거기에 text node 키에 변수 문자열을 "재할당"
+
+  </script>
+</body>
+</html>
