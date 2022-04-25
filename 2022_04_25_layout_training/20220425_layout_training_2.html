@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  /* #root{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #container{
+    width: 800px;
+    height: 800px;
+
+	
+	display: grid;
+	grid-template-columns: 250px 500px;
+	grid-template-rows: 250px 500px;
+  }
+
+  #container>div{
+    border: solid 1px black;
+  } */
+
+
+
+
+
+
+</style>
+<body>
+  <div id="root">
+    <div id="container">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+  
+    let hundred = 100;
+    
+    root.style.width = hundred + "vw";
+    root.style.height = hundred + "vh";
+    
+    console.log(root);
+  
+    console.dir(root);
+
+    const container = document.getElementById('container');
+
+    let baseBoxSize = 250;
+    let pixel = "px";
+
+    console.log(container);
+
+    container.style.width = baseBoxSize*3 + 50 + pixel ;
+    container.style.height = baseBoxSize*3 + 50 + pixel ;
+
+    console.dir(container);
+
+    container.style.display = "grid";
+    container.style.gap = "15px";
+    container.style.gridTemplateColumns = "250px 500px";
+    container.style.gridTemplateRows = "250px 500px"
+
+    container.children[0].style.backgroundColor = "#c4c4c4";
+    
+    container.children[0].addEventListener('click', function(){
+      container.children[1].style.backgroundColor = "#ff6666"
+
+    });
+
+
+    container.children[1].style.backgroundColor = "rgb(82, 82, 82)";
+    container.children[2].style.backgroundColor = "rgb(82, 82, 82)";
+
+    container.children[3].style.display = "none";
+
+
+
+
+  </script>
+</body>
+</html>

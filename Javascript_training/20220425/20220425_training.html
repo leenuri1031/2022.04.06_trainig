@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  
+  #root{
+    width: 100vw;
+    height: 100vh;
+    background-color: #333;
+  }
+
+  #root>div{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    color: #fff;
+  }
+
+</style>
+<body>
+  <div id="root">
+    <div>1</div>
+    <div>2</div>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+
+    const one = root.children[0];    //text node에 문자열 1이 적혀 있는 객체 
+    const two = root.children[1];    //text node에 문자열 2가 적혀 있는 객체
+
+    // 권장하는 방식 - 변수는 편하자고 쓰는 것이기 때문에 구조만 알면 ok
+    // 코딩 패턴을 눈여겨 보기
+    // HTML구조 - 관계로 배운 이유 -> 자바스크립트의 특징 때문에
+    // 내가 식별한 어떤 태그는 분명히 객체이기 때문에 객체를 조회할 수만 있다면 다 둘러 볼 수 있음
+    // console.dir()로 구조 확인 
+
+    // const test = document.querySelector('#root>div:nth-child(2)');
+    // css방식으로 가져오는 방식
+
+    two.textContent = "이건 두번 째";
+    // <재할당> - 필요한 만큼 객체에 접근하여 'setting' 
+
+    console.log(root);
+    console.dir(root);
+    console.dir(root.children[0]);
+
+    console.log(typeof two.textContent);
+
+
+    // event : 무슨 일이 일어 났다
+    one.addEventListener('click', function() {
+      two.style.transition = "1s";
+      two.textContent = "this is click event";
+      two.style.backgroundColor = "#ff6666";
+      two.style.width = "200px";
+
+      // console.log(two.style.backgroundColor);// debugging
+      // 중간에 무언가 막혔을 때 "짐짓" 되겠거니 하다가 막힘
+      // 제대로 안써준 것
+
+      if(two.style.backgroundColor === "rgb(225,102,102)"){
+        two.style.backgroundColor = "blue";
+      }
+    });
+
+  </script>
+</body>
+</html>
