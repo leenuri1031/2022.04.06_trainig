@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // ["해리", "론", "헤르미온느", "시리우스"];
+    // -> 데이터는 문서안에 들어있지만 찾을 방법이 없는 상태
+    // RAM(=컴퓨터 위장)
+
+    const  arr = ["해리", "론", "헤르미온느", "시리우스"];
+    const test = ["해리", "론", "헤르미온느", "드레이코"];
+
+    // console.log(arr);
+    // 식별 : 스티커 붙이는것과 같음
+
+    console.log(arr[3] === test[3]);
+    if(arr[3] === test[3]){
+      console.log("wow");
+    }else{
+      test[3] = "시리우스";
+      console.log(test);
+    } //16번 행의 if() 영역 - 영역 정리 하게 되면 복잡한 알고리즘일 경우 도움됨
+
+    if(arr[3] === test[3]){
+      arr[3] = "세베루스";
+      test[3] = "세베루스";
+
+      console.log(arr);
+      console.log(test);
+    }else{
+      console.log("damn");
+    }
+    // 1번 if문과 2번 if문은 전혀 다른 문이고 1번을 읽고 2번을 읽음 
+    // 동작 원리 : 위에서 부터 아래로, 왼쪽에서 오른쪽으로 읽어 내려감 
+    // 아래있는 것이 먼저 읽히면 어려워짐 -> 예상이 불가능 하기 때문에 
+    // hoistion(호이스팅) : 역순으로 읽혀지는 현상이 발생
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

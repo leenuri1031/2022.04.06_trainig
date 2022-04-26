@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darkmode</title>
+</head>
+<body>
+  <div id="root">
+    <button>click</button>
+    <h1>HELLO? </br> Guess who behind you!</h1>
+  </div>
+
+  <script>
+    // const test = document.querySelector('#root > button');
+
+    const root = document.getElementById('root');
+    const clickBtn = root.children[0];
+    const texth1 = root.children[1];
+
+    console.dir(root);
+    console.log(clickBtn);
+
+    let bgColorValue = 333;
+
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor = `#${bgColorValue}`;
+
+    let btnSize = 5;
+    // clickBtn.style.width = `${btnSize}vw`;
+    // clickBtn.style.height = `${btnSize}vh`;
+
+    texth1.style.width = `${btnSize*8}vw`
+    texth1.style.height = `${btnSize*8}vw`
+    texth1.style.color = "tomato";
+    texth1.style.display = "none";
+
+
+    
+    let data = true;
+    clickBtn.addEventListener('click', function(){
+      // console.log('hello');
+      // console.log(root.style.backgroundColor);
+
+      if(data === true){
+        console.log('data값은 : ' + data);
+        data = false;
+        root.style.backgroundColor = "darksalmon";
+        root.style.transition = "1s";
+        clickBtn.textContent = "day";
+        texth1.style.display = "block";
+        // clickBtn.style.width = `${btnSize*2}vw`
+        // clickBtn.style.height = `${btnSize*2}vh`
+      } else{ //else의 data !== true , data === false
+        console.log('지금 else의 data 값은 :' + data);
+        data = true;
+        root.style.backgroundColor = "darkblue";
+        clickBtn.textContent = "night";
+        texth1.style.display = "none";
+
+        // clickBtn.style.width = `${btnSize}vw`;
+        // clickBtn.style.height = `${btnSize}vh`;
+      }
+
+      // 참이면 반대 거짓이면 그 반대
+
+    })
+
+  </script>
+</body>
+</html>
