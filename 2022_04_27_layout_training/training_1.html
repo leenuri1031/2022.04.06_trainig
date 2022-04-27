@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=s, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <button id="click-button">click</button>
+    <div>stick</div>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+    console.dir(root);
+
+    const grayBar = root.children[1];
+
+    console.dir(grayBar);
+
+    // grayBar.textContent = '<section>hello</section>';
+    // textContent -> tag용도는 아님 = 단순 text입력만 할 수 있음
+
+    // grayBar.innerHTML = '<section>hello</section>';
+    // console.log(i);
+
+    const clickBtn = document.getElementById('click-button');
+
+    clickBtn.addEventListener('click', function(){
+      console.log('test');
+
+      let value = 1;
+      for(let i = 0; i < value; i++){
+        let makeSection = document.createElement('section');
+        makeSection.innerHTML = "hello" + i;
+        grayBar.appendChild(makeSection);
+        // root.appendChild(makeSection); -> 추가할 위치를 바꿔주기
+        // const grayBar = root.children[0]; -> 자식이 늘어났기 때문에 0번째가 아니라 1로 바꿔주기만 하면 됨
+      }
+    })
+    
+    // 하드코딩하지 않아도 됨
+
+  </script>
+</body>
+</html>
